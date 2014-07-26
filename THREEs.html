@@ -1,0 +1,39 @@
+<head>
+  <title>THREEs</title>
+    <script src="http://threejs.org/build/three.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/tween.min.js"></script>
+    <script src="http://threejs.org/examples/js/controls/TrackballControls.js"></script>
+    <script src="http://threejs.org/examples/js/renderers/CSS3DRenderer.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="menu">
+        <button id="table">TABLE</button>
+        <button id="sphere">SPHERE</button>
+        <button id="helix">HELIX</button>
+        <button id="grid">GRID</button>
+    </div>
+    <div id="inputbar">{{>menubar}}</div>
+    <script>
+        (function(){
+            console.log("In body function");
+        })();
+    </script>
+</body>
+
+<template name="content">
+    {{#each posts}}
+    <p class="message">{{message}}</p>
+    {{/each}}
+    
+</template>
+
+<template name="menubar">
+    <form>
+        <input type="text" name="myMsg" placeholder="what's on your mind?" />
+        <input type="submit" name="sendMsg" value="send" />
+    </form>
+    <div class="hide" id="content">{{>content}}</div>
+</template>
+
